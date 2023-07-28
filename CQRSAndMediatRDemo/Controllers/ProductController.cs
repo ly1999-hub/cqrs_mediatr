@@ -33,20 +33,22 @@ namespace CQRSAndMediatRDemo.Controllers
         {
             var query = new GetProductQuery();
             query.IdProduct=IdProduct;
-            var product = await _mediator.Send(query);
-            if(product != null)
-            {
-                return new OkObjectResult(product);
-            }
-            return new NotFoundResult();
+            return await _mediator.Send(query);
         }
+        
         [HttpGet]
         public async Task<IActionResult> All()
         {
             var query= new GetProductsQuery();
-            var products= await _mediator.Send(query);
-            return new OkObjectResult(products);
+            return await _mediator.Send(query);
         }
+
+        [HttpPatch]
+        public async Task<IActionResult> Update([FromBody] UpdateProductCommand command)
+        {
+            return await _mediator.Send(command);
+        }
+
         [HttpGet("export-to-excel")] 
         public async Task<IActionResult> ExportToExcel()
         {
@@ -65,6 +67,5 @@ namespace CQRSAndMediatRDemo.Controllers
                 fileDownloadName: "List-Product.xlsx"
             );
         }
-        
     }
 }

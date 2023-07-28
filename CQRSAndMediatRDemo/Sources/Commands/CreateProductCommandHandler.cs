@@ -12,6 +12,8 @@ namespace CQRSAndMediatRDemo.Sources.Commands
             {
                 product.Name = command.NameProduct;
                 product.Price = command.PriceProduct;
+                product.CreatedAt= DateTime.Now.ToUniversalTime();
+                product.UpdatedAt= DateTime.Now.ToUniversalTime();
             }
             using (var _context=new ProductDBContext())
             {
