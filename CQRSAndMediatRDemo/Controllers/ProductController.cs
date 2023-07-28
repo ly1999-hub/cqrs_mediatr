@@ -1,6 +1,7 @@
 ﻿using CQRSAndMediatRDemo.Models;
 using CQRSAndMediatRDemo.Sources.Commands;
 using CQRSAndMediatRDemo.Sources.Queries;
+using DocumentFormat.OpenXml.Office2016.Excel;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -45,6 +46,24 @@ namespace CQRSAndMediatRDemo.Controllers
             var query= new GetProductsQuery();
             var products= await _mediator.Send(query);
             return new OkObjectResult(products);
+        }
+        [HttpGet("export-to-excel")] 
+        public async Task<IActionResult> ExportToExcel()
+        {
+            var query=new GetProductsExportToExcelQuery();
+            var fileContents= await _mediator.Send(query);
+            Response.Clear();
+            Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+
+            if (fileContents == null)
+            {
+                return NotFound();
+            }
+            return File(
+                fileContents: fileContents,
+                contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                fileDownloadName: "List-Product.xlsx"
+            );
         }
         
     }

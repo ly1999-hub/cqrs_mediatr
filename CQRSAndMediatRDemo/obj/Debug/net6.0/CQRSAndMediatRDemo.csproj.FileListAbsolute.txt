@@ -57,3 +57,16 @@ D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\obj\Debug\net6.0\CQRSAndMediatRDemo
 D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\obj\Debug\net6.0\ref\CQRSAndMediatRDemo.dll
 D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\Serilog.dll
 D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\Serilog.Sinks.File.dll
+D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\EPPlus.dll
+D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\EPPlus.Interfaces.dll
+D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\EPPlus.System.Drawing.dll
+D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
+D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\System.IO.Packaging.dll
+D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
