@@ -26,5 +26,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+LogInit.Init(0, "started Server port:7096");
 app.Run();

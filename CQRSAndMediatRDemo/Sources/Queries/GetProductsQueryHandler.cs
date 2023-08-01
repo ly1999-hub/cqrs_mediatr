@@ -12,12 +12,20 @@ namespace CQRSAndMediatRDemo.Sources.Queries
         {
             using (var context = new ProductDBContext())
             {
-                var products = await context.products.ToListAsync();
-                if (products != null)
+                try
                 {
-                    return new OkObjectResult(products);
+                    var products = await context.products.ToListAsync();
+                    if (products != null)
+                    {
+                        return new OkObjectResult(products);
+                    }
+                    return new NotFoundResult();
                 }
-                return new NotFoundResult();
+                catch(Exception ex)
+                {
+                    LogInit.Init(2, ex.Message);
+                    return new BadRequestObjectResult(ex);
+                }
             }
         }
     }

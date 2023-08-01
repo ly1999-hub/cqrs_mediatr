@@ -20,26 +20,21 @@ namespace CQRSAndMediatRDemo.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateProductCommand command)
         {
-           var id= await _mediator.Send(command);
-            if (id != null)
-            {
-                return new OkObjectResult(id);
-            }
-            return new ContentResult() { Content = "Lỗi máy chủ", StatusCode = 500 };
+            return await _mediator.Send(command);
         }
 
         [HttpGet("{IdProduct:int?}")]
         public async Task<IActionResult> GetById(int IdProduct)
         {
             var query = new GetProductQuery();
-            query.IdProduct=IdProduct;
+            query.IdProduct = IdProduct;
             return await _mediator.Send(query);
         }
-        
+
         [HttpGet]
         public async Task<IActionResult> All()
         {
-            var query= new GetProductsQuery();
+            var query = new GetProductsQuery();
             return await _mediator.Send(query);
         }
 
@@ -49,11 +44,11 @@ namespace CQRSAndMediatRDemo.Controllers
             return await _mediator.Send(command);
         }
 
-        [HttpGet("export-to-excel")] 
+        [HttpGet("export-to-excel")]
         public async Task<IActionResult> ExportToExcel()
         {
-            var query=new GetProductsExportToExcelQuery();
-            var fileContents= await _mediator.Send(query);
+            var query = new GetProductsExportToExcelQuery();
+            var fileContents = await _mediator.Send(query);
             Response.Clear();
             Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
@@ -67,5 +62,13 @@ namespace CQRSAndMediatRDemo.Controllers
                 fileDownloadName: "List-Product.xlsx"
             );
         }
+        [HttpDelete("{IdProduct:int?}")]
+        public async Task<IActionResult> Delete(int IdProduct)
+        {
+            var command=new DeleteProductCommand();
+            command.IdProduct = IdProduct;
+            return await _mediator.Send(command);
+        }
+        
     }
 }

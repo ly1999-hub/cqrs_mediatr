@@ -1,12 +1,14 @@
 ﻿using CQRSAndMediatRDemo.Data;
 using CQRSAndMediatRDemo.Models;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 
 namespace CQRSAndMediatRDemo.Sources.Commands
 {
-    public class CreateProductCommandHandler :IRequestHandler<CreateProductCommand,int?>
+    public class CreateProductCommandHandler :IRequestHandler<CreateProductCommand,IActionResult>
     {
-        public async Task<int?> Handle(CreateProductCommand command, CancellationToken cancellationToken)
+        public async Task<IActionResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
         {
             var product = new Product();
             {
@@ -21,12 +23,12 @@ namespace CQRSAndMediatRDemo.Sources.Commands
                 {
                     _context.products.Add(product);
                     await _context.SaveChangesAsync();
-                    return product.Id;
+                    return new ObjectResult(product.Id);
                 }
                 catch (Exception ex)
                 {
                     LogInit.Init(2, ex.Message);
-                    return null;
+                    return new  StatusCodeResult(500);
                 }
             }
         }
