@@ -6,9 +6,13 @@ namespace CQRSAndMediatRDemo.Data
     public class ProductDBContext :DbContext
     {
         public DbSet<Product> products { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Username=postgres;Password=Huuly1999@;Database=postgres");
+            var configuration = new ConfigurationBuilder()
+                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                    .Build();
+            optionsBuilder.UseNpgsql(configuration.GetConnectionString("DatabaseConnection"));
         }
     }
 }
