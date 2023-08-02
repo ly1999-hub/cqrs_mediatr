@@ -6,6 +6,10 @@ namespace CQRSAndMediatRDemo.Data
     public class ProductDBContext :DbContext
     {
         public DbSet<Product> products { get; set; }
+       
+        public DbSet<Role> roles { get; set; }  
+        public DbSet<User> users { get; set; }
+       
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
