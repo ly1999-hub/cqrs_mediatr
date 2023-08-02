@@ -20,6 +20,8 @@ namespace CQRSAndMediatRDemo
                 LogInit.Init(2, ex.Message);
             }
             MediatorConfigurator.Configure(services);
+
+           
             services.AddSingleton<GetProductQueryHandler>();
             services.AddSingleton<CreateProductCommandHandler>();
         }

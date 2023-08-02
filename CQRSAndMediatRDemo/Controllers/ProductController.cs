@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CQRSAndMediatRDemo.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller]")]
+    [Route("api/v1/product/[controller]")]
     public class ProductController : Controller
     {
         private readonly IMediator _mediator;
