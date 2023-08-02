@@ -1,4 +1,5 @@
 ﻿using CQRSAndMediatRDemo.Sources.Commands;
+using CQRSAndMediatRDemo.Sources.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,6 +19,21 @@ namespace CQRSAndMediatRDemo.Controllers
         public async Task<IActionResult> Create([FromBody] CreateUserCommand command)
         {
             return await _mediator.Send(command);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetUsers()
+        {
+            var query=new GetUsersQuery();
+            return await _mediator.Send(query);
+        }
+
+        [HttpGet("{UserId:int?}")]
+        public async Task<IActionResult> GetUser(int UserId)
+        {
+            var query=new GetUserQuery();
+            query.UserId = UserId;
+            return await _mediator.Send(query);
         }
     }
 }
