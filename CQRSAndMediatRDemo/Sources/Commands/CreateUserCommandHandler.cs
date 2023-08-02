@@ -1,5 +1,6 @@
 ﻿using CQRSAndMediatRDemo.Data;
 using CQRSAndMediatRDemo.Models;
+using CQRSAndMediatRDemo.Utils;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,13 +14,11 @@ namespace CQRSAndMediatRDemo.Sources.Commands
             var newUser = new User();
             newUser.UserName = request.username;
             newUser.EmailAddress = request.email;
-            newUser.Password = request.password;
+            newUser.Password = HashPassword.HassPass(request.password);
             newUser.Locked = false;
             newUser.Avatar = "abc";
-
             newUser.CreatedAt = DateTime.UtcNow.ToUniversalTime();
             newUser.UpdateAt = DateTime.UtcNow.ToUniversalTime();
-
 
             using (var context = new ProductDBContext())
             {

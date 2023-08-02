@@ -14,7 +14,7 @@ namespace CQRSAndMediatRDemo.Models
         public string UserName { get; set; }
 
         [Required]
-        [EmailAddress(ErrorMessage ="sai định dạng *@gmail.com")]
+        [EmailAddress(ErrorMessage = "sai định dạng *@gmail.com")]
         public string EmailAddress { get; set; }
 
         [Required]
