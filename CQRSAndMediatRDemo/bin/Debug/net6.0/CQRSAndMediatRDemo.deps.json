@@ -10,6 +10,7 @@
         "dependencies": {
           "DocumentFormat.OpenXml": "2.20.0",
           "EPPlus": "6.2.7",
+          "HttpMultipartParser": "8.2.0",
           "MediatR": "11.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.9",
@@ -70,6 +71,18 @@
           "lib/net6.0/EPPlus.System.Drawing.dll": {
             "assemblyVersion": "6.1.1.0",
             "fileVersion": "6.1.1.0"
+          }
+        }
+      },
+      "HttpMultipartParser/8.2.0": {
+        "dependencies": {
+          "Microsoft.IO.RecyclableMemoryStream": "2.2.1",
+          "System.Buffers": "4.5.1"
+        },
+        "runtime": {
+          "lib/net6.0/HttpMultipartParser.dll": {
+            "assemblyVersion": "8.2.0.0",
+            "fileVersion": "8.2.0.0"
           }
         }
       },
@@ -446,6 +459,7 @@
           }
         }
       },
+      "System.Buffers/4.5.1": {},
       "System.CodeDom/4.4.0": {
         "runtime": {
           "lib/netstandard2.0/System.CodeDom.dll": {
@@ -579,6 +593,13 @@
       "sha512": "sha512-lRF5gHYrmkHOOiLMI0t6q8zNYjUrzRgAM5BCXumv5xiqXko8fx3AWI+HCNZfhEqVFGOop+42KfR5GiUcCoyoMw==",
       "path": "epplus.system.drawing/6.1.1",
       "hashPath": "epplus.system.drawing.6.1.1.nupkg.sha512"
+    },
+    "HttpMultipartParser/8.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XpM0qTUm5WDtPwPA9JUsqzco1XNLGoxHK/aMgmgbULVUhGJ9OT/ZDu7QQbSIrIWLARcad0b9LqaPMr1lOCGbAw==",
+      "path": "httpmultipartparser/8.2.0",
+      "hashPath": "httpmultipartparser.8.2.0.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",
@@ -852,6 +873,13 @@
       "sha512": "sha512-OvbvxX+wL8skxTBttcBsVxdh73Fag4xwqEU2edh4JMn7Ws/xJHnY/JB1e9RoCb6XpDxUF3hD9A0Z1lEUx40Pfw==",
       "path": "swashbuckle.aspnetcore.swaggerui/6.5.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+    },
+    "System.Buffers/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
+      "path": "system.buffers/4.5.1",
+      "hashPath": "system.buffers.4.5.1.nupkg.sha512"
     },
     "System.CodeDom/4.4.0": {
       "type": "package",

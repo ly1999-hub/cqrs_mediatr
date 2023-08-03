@@ -2,6 +2,7 @@
 using CQRSAndMediatRDemo.Sources.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http.Headers;
 
 namespace CQRSAndMediatRDemo.Controllers
 {
@@ -34,6 +35,15 @@ namespace CQRSAndMediatRDemo.Controllers
             var query=new GetUserQuery();
             query.UserId = UserId;
             return await _mediator.Send(query);
+        }
+        [HttpPost]
+        [Route("upload/file")]
+        public async Task<IActionResult> UploadAvatar(IFormFile  file)
+        {
+            var command = new UploadFileAvatarCommand();
+            command.file = file;
+
+            return await _mediator.Send(command); 
         }
     }
 }

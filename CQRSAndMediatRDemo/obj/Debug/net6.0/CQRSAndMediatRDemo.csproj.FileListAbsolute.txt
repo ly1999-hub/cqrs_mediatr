@@ -71,3 +71,4 @@ D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\runtimes\unix\lib\
 D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+D:\net\CQRSAndMediatRDemo\CQRSAndMediatRDemo\bin\Debug\net6.0\HttpMultipartParser.dll
